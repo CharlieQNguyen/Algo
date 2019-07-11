@@ -54,3 +54,17 @@
 // }
 
 // singleEl(arr);
+
+
+arr = [-1, 1.5, 2, 2.5, 4, 5];
+num = -1;
+
+function numberFinder(arr, num) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === num) {
+      return i;
+    }
+  }
+}
+
+numberFinder(arr, num);
