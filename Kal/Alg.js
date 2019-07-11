@@ -104,3 +104,16 @@
 // }
 
 // oneDup(arr);
+
+// arr = [8, 7, 6, 7, 6, 5, 4, 3, 2, 3, 4, 3];
+// num = 3;
+
+// function adjacentOne(arr, num) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === num) {
+//       return i;
+//     }
+//   }
+// }
+
+// adjacentOne(arr, num);
