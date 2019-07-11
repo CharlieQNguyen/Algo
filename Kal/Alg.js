@@ -69,6 +69,21 @@
 
 // numberFinder(arr, num);
 
+
+// arr = [-1, 3, 4, 5, 7, 7, 8];
+
+// function oneDup(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === arr[i + 1]) {
+//       return arr[i];
+//     }
+//   }
+//   return undefined;
+// }
+
+// oneDup(arr);
+
+
 // arr = [-1, 3, 4, 5, 7, 7, 8];
 
 // function oneDup(arr) {
@@ -85,6 +100,7 @@
 //       return arr[i];
 //     }
 //   }
+//   return false;
 // }
 
 // oneDup(arr);
