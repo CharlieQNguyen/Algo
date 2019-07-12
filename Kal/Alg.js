@@ -117,3 +117,23 @@
 // }
 
 // adjacentOne(arr, num);
+
+// arr = [3, 12, 4, 5];
+
+// function sumAdd(arr) {
+//   let sum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i];
+//   }
+//   let position = arr.indexOf(sum / 2);
+//   if (position === -1) {
+//     // not there
+//     return false;
+//   } else {
+//     arr.splice(position, 1);
+//     let arr2 = [sum / 2];
+//     return [arr, arr2];
+//   }
+// }
+
+// sumAdd(arr);
