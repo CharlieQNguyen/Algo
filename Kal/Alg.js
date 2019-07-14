@@ -137,3 +137,23 @@
 // }
 
 // sumAdd(arr);
+
+// Class 2
+
+// arr1 = [5, 15, 20, 25];
+// arr2 = [7, 10, 15];
+
+// function twoArr(arr1, arr2) {
+//   for (let i = 0; i < arr2.length; i++) {
+//     arr1.push(arr2[i]);
+//   }
+//   return arr1;
+// }
+
+// twoArr(arr1, arr2);
+
+// Merge(a, b){
+    //x = a.length -1
+    //y = b.length -1
+    //z = (x - y) -1
+//}
