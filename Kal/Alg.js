@@ -157,3 +157,14 @@
     //y = b.length -1
     //z = (x - y) -1
 //}
+
+
+//quesiton 2 in class
+// find the unique element return it in an array
+
+// arr = [4, 1, 2, 4, 2, 1, 3, 4]
+// output = {3, 3, 3, 4, 4}
+// if count is more than 1 in dectionary you would want to remove it
+// if I aready have the value then i would decrement it
+// if it's one then remove it
+// time is O(n) space is 1+k
