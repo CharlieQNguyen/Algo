@@ -130,10 +130,10 @@ const ll = new LinkedList();
 ll.insertFirst(100);
 ll.insertFirst(200);
 ll.insertFirst(300);
-ll.insertLast(400);
+//ll.insertLast(400);
 
-ll.clearList();
-ll.removeAt(33);
+//ll.clearList();
+//ll.removeAt(33);
 
 ll.printListData();
 //ll.getAt(0);
