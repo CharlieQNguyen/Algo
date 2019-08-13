@@ -134,6 +134,6 @@ ll.insertFirst(300);
 
 //ll.clearList();
 //ll.removeAt(33);
-
+//ll.reverse();
 ll.printListData();
 //ll.getAt(0);

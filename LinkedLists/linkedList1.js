@@ -141,7 +141,19 @@ class LinkedList {
   }
 
   // Reverses the Linked list in place
-  reverse() {}
+  reverse(head) {
+    // declare pointers
+    let previous = null;
+    let current = this.head;
+    // use while loop to loop through the list while head exist to
+    // switch pointers
+    while(this.head !== null) {
+      this.head = this.head.next;
+      current.next = previous;
+      previous = current;
+      return head;
+    }
+  }
 
   print() {
     /*
@@ -166,13 +178,14 @@ let list = new LinkedList();
 list.add(100);
 list.add(200);
 list.add(300);
-list.addToFront(400);
-list.addAtIndex(2000,2);
-const oldHead = list.head;
-list.head = list.head.next;
-list.addToFront("Front");
-// Fixing the list
-oldHead.next = list.head;
-list.head = oldHead;
-list.remove(100);
+// list.addToFront(400);
+// list.addAtIndex(2000,2);
+// const oldHead = list.head;
+// list.head = list.head.next;
+// list.addToFront("Front");
+// // Fixing the list
+// oldHead.next = list.head;
+// list.head = oldHead;
+// list.remove(100);
+list.reverse();
 list.print();
