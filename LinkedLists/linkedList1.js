@@ -141,19 +141,43 @@ class LinkedList {
   }
 
   // Reverses the Linked list in place
-  reverse(head) {
+  reverse() {
     // declare pointers
     let previous = null;
     let current = this.head;
     // use while loop to loop through the list while head exist to
     // switch pointers
-    while(this.head !== null) {
-      this.head = this.head.next;
+    while(current !== null) {
+      // Capturing our next node to work on
+      const nextNode = current.next;
+      // Reversing the current node point at the one before it
       current.next = previous;
+      // Moving our pointers for the next iteration of the loop
       previous = current;
-      return head;
+      current = nextNode;
     }
+
+    // Setting the new head of the list
+    this.head = previous;
+
+    return this.head;
   }
+
+  reverseRecursive(previous = null, current = this.head){
+    if(current == null){
+      return previous;
+    }
+
+    // Goto the end of the list
+    const newHead = this.reverseRecursive(current, current.next);
+
+    current.next = previous;
+    this.head = newHead;
+    return newHead;
+  }
+
+  // 1->2->3->4->
+  // <-1<-2<-3<-4
 
   print() {
     /*
@@ -171,6 +195,21 @@ class LinkedList {
       counter++;
     }
   }
+
+  printRecursive(node = this.head, counter = 0){
+    // Stop at last node
+    if(node == null){
+      return;
+    }
+
+    // Do function call first to get to the end of the list
+    //Print the node
+    console.log(`${counter} : ${node.data}`);
+    
+    // Aka iterator 
+    this.printRecursive(node.next, counter + 1);
+  
+  }
 }
 
 
@@ -187,5 +226,39 @@ list.add(300);
 // oldHead.next = list.head;
 // list.head = oldHead;
 // list.remove(100);
-list.reverse();
-list.print();
+// list.reverseRecursive();
+// list.printRecursive();
+
+
+class Data1{
+  constructor(num){
+    this.num = num;
+  }
+  increase(amount){
+    if(amount > 0){
+      this.num += amount;
+    }
+  }
+  decrease(amount){
+    if(amount > 0){
+      this.num -= amount;
+    }
+  }
+}
+
+class DataManipulator{
+
+  constructor(){
+    // private
+    this.data1 = new Data1(1000);
+  }
+
+  changePositve(){
+    this.data1.increase(100);
+  }
+}
+
+let dataM = new DataManipulator();
+dataM.changePositve();
+
+console.log(dataM.data1.num);
