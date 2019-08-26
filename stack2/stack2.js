@@ -1,3 +1,5 @@
+// Group implementation 
+
 class Node {
     constructor(data) {
         this.data = data;
@@ -43,5 +45,5 @@ stack1.addTo(3)
 
 
 stack1.removeTop()
-//stack1.print()
+stack1.print()
 

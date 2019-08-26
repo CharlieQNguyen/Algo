@@ -12,9 +12,9 @@ class Stack {
     // push data onto the stack
     push(data) {
         // create newNode to add to stack
-        let newNode = new Node(data)
+        let newNode = new Node(data);
         // newNode next points to the head
-        newNode.next = this.head
+        newNode.next = this.head;
         // move head to the newNode
         this.head = newNode;
     }
@@ -25,14 +25,14 @@ class Stack {
             return;
         }
         // normal case
-        //create temp call newHead
-        let newHead = this.head;
-        //move head to the next node
+        //create temp call toReturn
+        let toReturn = this.head;
+        // move head to the next node
         this.head = this.head.next;
-        //newHead pointer points to null to disconnect
-        newHead.next = null;
-        //return the node that was deleted stored in newHead variable 
-        return newHead.data
+        // toReturn pointer points to null to disconnect
+        toReturn.next = null;
+        // return the node that was deleted stored in toReturn variable 
+        return toReturn.data;
     }
 
     print() {
@@ -40,7 +40,7 @@ class Stack {
 
         while(pointer) {
             console.log(pointer.data);
-            pointer = pointer.next
+            pointer = pointer.next;
         }
     }
 }
@@ -49,5 +49,5 @@ stack1 = new Stack;
 stack1.push(100)
 stack1.push(200)
 stack1.push(300)
-stack1.pop();
+console.log("Popping the stack: " + stack1.pop());
 stack1.print();

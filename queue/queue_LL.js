@@ -67,7 +67,6 @@ class Queue {
 }
 
 // Testing our queue
-
 let queue1 = new Queue;
 
 queue1.enqueue(100);
