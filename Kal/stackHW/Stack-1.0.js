@@ -24,3 +24,21 @@ function balance(str) {
 }
 
 balance(str);
+
+//problem 2
+
+// stack = [1, 2, 3, 4];
+
+// function reverseStack(stack) {
+//   let tempStack = [];
+//   let i;
+//   for (i = stack.length - 1; i >= 0; i--) {
+//     tempStack.push(stack.pop());
+//   }
+//   for (i = 0; i < tempStack.length; i++) {
+//     stack.push(tempStack[i]);
+//   }
+//   return stack;
+// }
+
+// reverseStack(stack);
