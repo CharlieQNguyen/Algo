@@ -31,6 +31,7 @@ urlLIFY(str, num);
 
 // Not advance version
 //========================
+
 // str = "Mr John Smith";
 // num = str.length;
 
@@ -39,7 +40,7 @@ urlLIFY(str, num);
 //   for (let i = 0; i < str.length; i++) {
 //     if (str[i] == " ") {
 //       str2 += "%20";
-//     } else if (str[i] !== " ") {
+//     } else {
 //       str2 += str[i];
 //     }
 //   }
