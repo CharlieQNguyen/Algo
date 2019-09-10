@@ -2,7 +2,8 @@
 //the string aabccccaaa would become a2b1c4a3. If the compressed string would not become smaller than the 
 //original string, your method should return the original string.
 
-
+// Linear time complexity 
+// Space complexity constant
 str = "aabccccaaa";
 
 function strCompress(str) {
