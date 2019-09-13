@@ -12,7 +12,10 @@ function urlLIFY(str, num) {
   let str2 = "";
   let chars = 0;
   for (let i = 0; i < str.length; i++) {
-    if (str[i] !== " ") chars++;
+    if (str[i] !== " ") {
+      chars++;
+    }
+    
   }
   let spaces = num - chars;
   for (let i = 0; i < str.length; i++) {
