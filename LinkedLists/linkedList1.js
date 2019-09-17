@@ -216,8 +216,9 @@ class LinkedList {
 
 let list = new LinkedList();
 list.add(100);
-list.add(200);
+list.add(500);
 list.add(300);
+list.print();
 // list.addToFront(400);
 // list.addAtIndex(2000,2);
 // const oldHead = list.head;
@@ -231,35 +232,35 @@ list.add(300);
 // list.printRecursive();
 
 
-class Data1{
-  constructor(num){
-    this.num = num;
-  }
-  increase(amount){
-    if(amount > 0){
-      this.num += amount;
-    }
-  }
-  decrease(amount){
-    if(amount > 0){
-      this.num -= amount;
-    }
-  }
-}
+// class Data1{
+//   constructor(num){
+//     this.num = num;
+//   }
+//   increase(amount){
+//     if(amount > 0){
+//       this.num += amount;
+//     }
+//   }
+//   decrease(amount){
+//     if(amount > 0){
+//       this.num -= amount;
+//     }
+//   }
+// }
 
-class DataManipulator{
+// class DataManipulator{
 
-  constructor(){
-    // private
-    this.data1 = new Data1(1000);
-  }
+//   constructor(){
+//     // private
+//     this.data1 = new Data1(1000);
+//   }
 
-  changePositve(){
-    this.data1.increase(100);
-  }
-}
+//   changePositve(){
+//     this.data1.increase(100);
+//   }
+// }
 
-let dataM = new DataManipulator();
-dataM.changePositve();
+// let dataM = new DataManipulator();
+// dataM.changePositve();
 
-console.log(dataM.data1.num);
+// console.log(dataM.data1.num);
