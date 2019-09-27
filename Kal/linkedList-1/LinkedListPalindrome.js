@@ -38,7 +38,7 @@ class LinkedList {
       fast = fast.next.next;
       slow = slow.next;
     }
-    slow = reverse(slow);
+    slow = this.reverse(slow);
         let pointer = slow;
         let counter = 0;
         console.log('*************');
@@ -59,18 +59,18 @@ class LinkedList {
     return true;
   }
 
-  // reverse(slow) {
-  //   let previous = null;
-  //   let current = slow;
+  reverse(slow) {
+    let previous = null;
+    let current = slow;
 
-  //   while (current !== null) {
-  //     let nextNode = current.next;
-  //     current.next = previous;
-  //     previous = current;
-  //     current = nextNode;
-  //   }
-  //   return previous; // is the last pointer in the list
-  // }
+    while (current !== null) {
+      let nextNode = current.next;
+      current.next = previous;
+      previous = current;
+      current = nextNode;
+    }
+    return previous; // is the last pointer in the list
+  }
 
   print() {
     let pointer = this.head;
@@ -84,18 +84,18 @@ class LinkedList {
   }
 }
 
-function reverse(slow) {
-  let previous = null;
-  let current = slow;
+// function reverse(slow) {
+//   let previous = null;
+//   let current = slow;
 
-  while (current !== null) {
-    let nextNode = current.next;
-    current.next = previous;
-    previous = current;
-    current = nextNode;
-  }
-  return previous; // is the last pointer in the list
-}
+//   while (current !== null) {
+//     let nextNode = current.next;
+//     current.next = previous;
+//     previous = current;
+//     current = nextNode;
+//   }
+//   return previous; // is the last pointer in the list
+// }
 
 let list = new LinkedList();
 list.add(1)
