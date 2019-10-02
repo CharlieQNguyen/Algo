@@ -14,7 +14,7 @@ function findNthValue(head, n) {
         current = current.next;
         counter++;
     }
-    return current.val;
+    return null;
 }
 
 const headNode = Node.createLinkedListFromArray(["a","b","c","d"]);
