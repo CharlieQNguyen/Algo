@@ -14,9 +14,11 @@ function reverseIterative(head){
 }
 
 function reverseRecursive(head) {
+    // Base case if head is null just return head
     if (!head || !head.next) {
         return head;
     }
+    // Logic
     const rest = reverseRecursive(head.next);
     head.next.next = head;
     head.next = null;
