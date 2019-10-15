@@ -1,19 +1,25 @@
-arr = [-2, 3, 2 -1]
+arr = [1, 4, 20, 3, 10, 5];
 
 function kadane(arr) {
-    let maxCurrent = arr[0];
-    let maxGlobal = arr[0];
-    for(let i = 0; i < arr.length; i++) {
-        if(arr[i] > maxCurrent) {
-            maxCurrent = arr[i];
-        } else {
-            // add the current index value to the maxCurrent
-            maxCurrent += arr[i];
-        }
-        // check maxCurrent against maxGlobal
-        if(maxCurrent > maxGlobal) {
-            maxGlobal = maxCurrent;
-        }
+  let maxCurrent = arr[0];
+  let maxGlobal = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] + maxCurrent > arr[i]) {
+      maxCurrent += arr[i];
+    } else if (arr[i] > maxCurrent) {
+      maxCurrent = arr[i];
     }
-    return maxGlobal
+    console.log(maxCurrent);
+    if (maxCurrent > maxGlobal) {
+      maxGlobal = maxCurrent;
+    }
+    // console.log(maxCurrent + " maxCurrentBefore")
+    // maxCurrent = Math.max(arr[i], maxCurrent + arr[i]);
+    // console.log(arr[i] + " arr[i]")
+    // console.log(maxCurrent + " maxCurretnAfter")
+    // maxGlobal = Math.max(maxCurrent, maxGlobal);
+    // console.log(maxGlobal + " Global")
+    // console.log("**************")
+  }
+  return maxGlobal;
 }
