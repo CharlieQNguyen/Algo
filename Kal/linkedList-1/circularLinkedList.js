@@ -69,3 +69,26 @@ function circleLinkedList(list) {
     }
     return 
 }
+
+function circleLinkedList1(list) {
+    if(list.head === null) {
+        return;
+    }
+    let fast = list.head;
+    let slow = list.head;
+    while(fast !== null && fast.next !== null) {
+        fast = fast.next.next;
+        slow = slow.next;
+        // if fast equal to slow then there's a circle
+        if(fast === slow) {
+            // reset either fast
+            let fast = list.head;
+            while(fast !== slow) {
+                fast = fast.next;
+                slow = slow.next;
+            }
+            return fast;
+        }
+    }
+    return;
+}
