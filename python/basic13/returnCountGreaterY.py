@@ -1,5 +1,5 @@
 arr = [100, 200, 300, 400, 500]
-y = 3
+y = 300
 
 def countGreaterY(arr, y):
     count = 0
