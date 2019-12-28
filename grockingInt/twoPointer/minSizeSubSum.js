@@ -10,7 +10,7 @@ function minSizeSubArray(arr, s) {
     let windowSum = 0;
     let minLength = Infinity;
     for(let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
-        windowSum += arr[windowEnd];
+        windowSum += arr[windowEnd]; // expand
         // while windowSum is bigger than S keep shrinking until it'not bigger or equal to s
         while(windowSum >= s) {
             // get minimum length by comparing with actual window
