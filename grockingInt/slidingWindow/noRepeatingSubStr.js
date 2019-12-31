@@ -11,7 +11,7 @@ function noRepeatingSubStr(str) {
         const charRight = str[windowEnd]
         // check to see if character in windowStart is in the hash so we can move it to skip over duplicate
         if(charRight in hash) {
-            // if right character is a key in the hashmap
+            // if the character is a key in the hashmap
             // look value in hash to see where you last saw the index (add 1 to move pass the duplicate)
             windowStart = Math.max(windowStart, hash[charRight] + 1)
         }
