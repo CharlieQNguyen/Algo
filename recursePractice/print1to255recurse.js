@@ -16,16 +16,31 @@
 
 // oneTo255(1);
 
+// function oneTo255(num) {
+//     //base case
+//     if(num <= 255) {
+//         console.log(num);
+//         //forward progress
+//         num++;
+//         //recursion call
+//         oneTo255(num)
+//     }
+//     return;
+// }
+
+// oneTo255(1)
+
+// Recursive utilizing the Call Stack
+
 function oneTo255(num) {
     //base case
-    if(num <= 255) {
-        console.log(num);
-        //forward progress
-        num++;
-        //recursion call
+    if(num > 0) {
+        num--;
         oneTo255(num)
+        console.log(num + 1)
+        
     }
-    return;
+    return
 }
 
-oneTo255(1)
+oneTo255(255);
