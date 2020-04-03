@@ -17,3 +17,20 @@ function switchPair(str) {
 }
 
 switchPair(str);
+
+
+
+/*
+
+def switch_pairs(text):
+    """
+    The function create a new 
+    """
+    newstr = ''
+
+    for i in range(0,len(text)-1,2):
+        newstr = newstr+ (text[i+1] + text[i])
+    if (len(text)) %2 ==1:
+            newstr += text[len(text)-1]
+    return newstr
+*/
