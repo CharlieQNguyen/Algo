@@ -46,4 +46,3 @@ stack1.addTo(3)
 
 stack1.removeTop()
 stack1.print()
-
