@@ -31,6 +31,18 @@
 //   }
 // }
 
+// arr = [1, 1, 3, 3, 4, 5, 5, 7, 7, 8, 8];
+
+// function singleElements(arr) {
+//     for(let i = 0; i < arr.length; i+= 2) {
+//         if(arr[i] !== arr[i+1]) {
+//             return arr[i]
+//         }
+//     }
+// }
+
+// singleElements(arr);
+
 // singleEl(arr);
 
 // arr = [1, 1, 3, 3, 4, 5, 5, 7, 8, 8];
