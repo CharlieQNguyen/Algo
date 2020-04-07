@@ -14,11 +14,17 @@ var readMe = fs.readFileSync("../song.txt", "utf8"); // fs.readFileSync is requi
 //console.log(readMe)
 
 function uniqueWords(readMe) {
-    let word = "";
-    for(let i = 0; i < readMe.length; i++) {
-        word += readMe[i]
+    let word = readMe.split(" ");
+    let hash = {}
+    for(let i = 0; i < word.length; i++) {
+        if(hash[word[i]]) {
+            hash[word[i]] += 1;
+        } else {
+            hash[word[i]] = 1;
+        }
     }
-    console.log(word)
+    let wordCount = Object.keys(hash).length;
+    console.log(wordCount);
 }
 uniqueWords(readMe);
 
