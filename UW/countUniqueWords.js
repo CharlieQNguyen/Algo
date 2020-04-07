@@ -21,3 +21,21 @@ function uniqueWords(readMe) {
     console.log(word)
 }
 uniqueWords(readMe);
+
+
+// str = "I'm just goin' to the store, to the store I'm just goin' to the store You might not see me anymore, anymore I'm just goin' to the store";
+
+// function unique(str) {
+//   let word = str.split(" ");
+//   let hash = {};
+//   for (let i = 0; i < word.length; i++) {
+//     if (hash[word[i]]) {
+//       hash[word[i]] += 1;
+//     } else {
+//       hash[word[i]] = 1;
+//     }
+//   }
+//   console.log(Object.keys(hash).length);
+// }
+
+// unique(str);
