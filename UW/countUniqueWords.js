@@ -45,3 +45,16 @@ uniqueWords(readMe);
 // }
 
 // unique(str);
+
+/* 
+    unique_word = []
+
+    with open(file_name) as file:
+        lines = file.readlines()
+        for line in lines:
+            words = line.split()
+            for word in words:
+                if word not in unique_word:
+                    unique_word.append(word)
+    return len(unique_word)
+*/
