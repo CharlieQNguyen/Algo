@@ -20,6 +20,7 @@ var fs = require("fs");
 var readMe = fs.readFileSync("../popularSong.txt", "utf8"); // fs.readFileSync is required for us to read teh file 
 //console.log(readMe)
 
+
 function countWords(readMe) {
     let word = readMe.split(/\b\s+(?!$)/);
     let hash = {};
