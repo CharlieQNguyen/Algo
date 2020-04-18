@@ -22,14 +22,43 @@ var readme = fs.readFileSync("../poem.txt", "utf8"); // fs.readFileSync is requi
 //console.log(readMe)
 
 function longestWord(readme) {
-    let word = readme.split(/\b\s+(?!$)/);
-    longWord = "";
-    for(let i = 0; i < word.length; i++) {
-        if(word[i].length > longWord.length) {
-            longWord = word[i]
+    let location = ["", 1, 0]
+    let lines = readme.split(/\r\n|\n/);
+    for(line in lines) {
+        if(lines[line].length == 0) {
+            console.log(false)
         }
     }
-    console.log(longWord)
+    let lineNumber = 1;
+    let wordIndex = 0;
+    for(line in lines) {
+        //console.log(lines[line])
+        for(let word in line) {
+            console.log(lines[word]);
+            
+        }
+    }
 }
 
 longestWord(readme);
+
+// location = ['', 1, 0]
+//     with open(file_name) as file:
+//         lines = file.readlines()
+//         if len(lines) == 0:
+//             return None
+//         line_number = 1
+//         for line in lines:
+//             line = line.split()
+//             word_index = 0
+//             for word in line:
+//                 if len(word) > len(location[0]):
+//                     location[0] = word
+//                     location[1] = line_number
+//                     location[2] = word_index
+//                 elif (len(word) == len(location[0])
+//                         and word_index < location[2]):
+//                     location[2] = word_index
+//                 word_index += 1
+//             line_number += 1
+//         return f'{location[1]}: {location[0]}'
