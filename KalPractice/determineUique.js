@@ -1,5 +1,5 @@
 // str = "aaaaaabbbbbccccc"
-// str = "abcde"
+str = "abcde"
 
 // function determineUique(str) {
 //     let hash = {};
@@ -15,3 +15,15 @@
 
 // determineUique(str)
 
+function determineUique(str) {
+    for(let i = 0; i < str.length; i++) {
+        for(let j = i + 1; j < str.length; j++) {
+            if(str[i] === str[j]) {
+                return console.log(false + " String is not Unique")
+            }
+        }
+    }
+    return console.log(true + " All Char is Unique")
+}
+
+determineUique(str);
