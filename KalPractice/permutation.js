@@ -1,5 +1,5 @@
 str1= "abcdefg"
-str2= "gfdeabc"
+str2= "gfedabc"
 
 function permutation(str1, str2) {
     if(str1.length !== str2.length) {
