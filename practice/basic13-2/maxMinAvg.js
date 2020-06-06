@@ -13,7 +13,7 @@ function maxMinAvg(arr) {
         }
     }
     let avg = sum/arr.length;
-    console.log("Max: " + max + " Min: " + min + " Avg: " + avg)
+    return console.log("Max: " + max + " Min: " + min + " Avg: " + avg)
 }
 
 maxMinAvg(arr);
