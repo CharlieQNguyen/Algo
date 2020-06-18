@@ -1,6 +1,9 @@
 // given a sorted array with duplicates find the number that is not a duplicates
 
-arr = [1, 1, 3, 3, 4, 5, 5, 6, 7, 7, 8, 8];
+arr = [1, 1, 3, 3, 4, 5, 5, 7, 7, 8, 8];
+
+
+
 
 // function singleEl(arr) {
 //     let singles = [];
@@ -13,7 +16,23 @@ arr = [1, 1, 3, 3, 4, 5, 5, 6, 7, 7, 8, 8];
 //     return console.log(singles)
 // }
 
-
+// function singleEl(arr) {
+//     let hash = {};
+//     let array = [];
+//     for(let i = 0; i < arr.length; i++) {
+//         if(hash[arr[i]]) {
+//             hash[arr[i]] += 1;
+//         } else {
+//             hash[arr[i]] = 1;
+//         }
+//     }
+//     for(let key in hash) {
+//         if(hash[key] < 2) {
+//             array.push(key)
+//         }
+//     }
+//     return console.log(array)
+// }
 
 
 
