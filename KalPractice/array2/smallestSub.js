@@ -22,11 +22,11 @@ arr = [2, 1, 5, 2, 3, 2]
 S=7 
 
 function smallestContiSumK(arr, S) {
-  let windowStart = 0;
+  let windowStart = 0; // 1
   let minLength = arr.length;
   let windowSum = 0;
-  for(windowEnd = 0; windowEnd < arr.length; windowEnd++) { // windowEnd is i and i always increment
-    windowSum += arr[windowEnd];
+  for(var windowEnd = 0; windowEnd < arr.length; windowEnd++) { // windowEnd is i and i always increment
+    windowSum += arr[windowEnd]; // 2, 3, 8 // 8, // 2, 5, 7 // 5
     while(windowSum >= S) { // had to use while loop to keep shrinking even if it's equal to or grater
       const windowLength = windowEnd-windowStart+1; // converting index to length typical involve +1
       minLength = Math.min(minLength, windowLength) // will pick the window length because window is going to shrink;
