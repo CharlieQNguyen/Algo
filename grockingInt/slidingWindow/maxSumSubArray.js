@@ -24,3 +24,24 @@ function maxSumSubArray(arr, k) {
 }
 
 maxSumSubArray(arr, k);
+
+// arr = [2, 3, 4, 1, 5];
+// k = 2;
+
+// function maxSumSubSizeK(arr, k) {
+//   let windowStart = 0;
+//   let windowSum = 0;
+//   let maxSum = 0;
+//   let windowEnd = 0;
+//   while (windowEnd < arr.length) {
+//     windowSum += arr[windowEnd];
+//     if (windowEnd - windowStart == k - 1) {
+//       maxSum = Math.max(windowSum, maxSum);
+//       windowSum = arr[windowEnd];
+//       windowStart = windowEnd;
+//     }
+//     windowEnd++;
+//   }
+//   return console.log(maxSum);
+// }
+// maxSumSubSizeK(arr, k);
