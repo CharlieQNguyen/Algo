@@ -22,8 +22,8 @@ Explanation: Replace the 'b' or 'd' with 'c' to have the longest repeating subst
 
 */
 
-str = "abccde";
-k = 1;
+str = "aabccbb";
+k = 2;
 
 function length_of_longest_substring(str, k) {
   let windowStart = 0,
@@ -42,10 +42,8 @@ function length_of_longest_substring(str, k) {
       frequencyMap[rightChar] = 0;
     }
     frequencyMap[rightChar] += 1;
-    maxRepeatLetterCount = Math.max(
-      maxRepeatLetterCount,
-      frequencyMap[rightChar]
-    );
+    console.log(frequencyMap)
+    maxRepeatLetterCount = Math.max(maxRepeatLetterCount,frequencyMap[rightChar]);
 
     // Current window size is from windowStart to windowEnd, overall we have a letter which is
     // repeating 'maxRepeatLetterCount' times, this means we can have a window which has one letter
@@ -70,6 +68,7 @@ function length_of_longest_substring(str, k) {
     }
 
     maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
+    console.log("this is my maxLength " + maxLength)
     console.log("* I just ended step " + (windowEnd + 1) + "  ******");
     console.log("**************************");
   }
