@@ -60,12 +60,15 @@ function longestSubStringK(str, k) {
     let hashChar = {};
     let windowStart = 0;
     let maxLength = 0;
+    let strStart = 0;
     for(let windowEnd = 0; windowEnd < str.length; windowEnd++) {
+
         if(hashChar[str[windowEnd]]) {
             hashChar[str[windowEnd]] += 1;
         } else {
             hashChar[str[windowEnd]] = 1;
         }
+
         while(Object.keys(hashChar).length > k) {
             hashChar[str[windowStart]] -= 1;
             if(hashChar[str[windowStart]] === 0){
@@ -73,10 +76,17 @@ function longestSubStringK(str, k) {
             }
             windowStart++
         }
+
         windowLength = windowEnd - windowStart + 1;
-        maxLength = Math.max(maxLength, windowLength)
+        if(windowLength > maxLength) {
+            strStart = windowStart;
+            maxLength = windowLength; // maxlength is length winning window
+        }
+        //maxLength = Math.max(maxLength, windowLength)
     }
-    return console.log(maxLength)
+    return console.log(str.substring(strStart, strStart + maxLength))
+
+    //[1 ,2, 3, 4, 5]
 }
 
 longestSubStringK(str, k);
