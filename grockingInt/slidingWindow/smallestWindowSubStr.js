@@ -20,37 +20,60 @@ Explanation: No substring in the given string has all characters of the pattern.
 
 str = "aabdec";
 pattern = "abc"
+//Output: "abdec";
 
-
-function smallestSubString(str, pattern) {
-  let patternHash = {};
+function find_smallest_SubStr(str, pattern) {
   let windowStart = 0;
-  let match = 0;
-  let smallestLength = Infinity;
+  let patternMap = {};
   let startOfStr = 0;
-  // populate pattenHash
+  let smallestSubStrLength = Infinity;
+  let match = 0;
   for(let i = 0; i < pattern.length; i++) {
-    patternHash[pattern[i]] = (patternHash[pattern[i]] || 0) + 1;
+    if(patternMap[pattern[i]]) {
+      patternMap[pattern[i]] += 1;
+    } else {
+      patternMap[pattern[i]] = 1;
+    }
   }
-  //console.log(patternHash)
+  // {a : 1, b : 1, c : 1}
   for(let windowEnd = 0; windowEnd < str.length; windowEnd++) {
-    //console.log(str[windowEnd])
-    if(str[windowEnd] in patternHash) {
-      // console.log(str[windowEnd]);
-      patternHash[str[windowEnd]] -= 1;
-      // check to see if everything is Zero out
-      if(patternHash[str[windowEnd]] >= 0) {
+    let rightChar = str[windowEnd];
+    if(rightChar in patternMap) {
+      patternMap[rightChar] -= 1;
+      if(pattern[rightChar] >= 0) {
         match += 1;
       }
     }
-    if(match === )
+    while(match === pattern.length) {
+
+      var currentWindowLength = windowEnd - windowStart + 1;
+
+      smallestSubStrLength = Math.max(smallestSubStrLength, currentWindowLength);
+
+      startOfStr = windowStart;
+
+      let leftChar = str[windowStart];
+
+      windowStart += 1;
+
+      if(leftChar in patternMap) {
+
+        if(patternMap[leftChar] === 0) {
+
+          match -= 1;
+
+        }
+        patternMap[leftChar] += 1;
+      }
+    }
   }
+  if(smallestSubStrLength > str.length) {
+    return ''
+  }
+  return console.log(str.substring(startOfStr, startOfStr + currentWindowLength));
 }
 
-smallestSubString(str, pattern);
-
-
-
+find_smallest_SubStr(str, pattern);
 
 
 

@@ -47,3 +47,4 @@ function feasible(hash, windowEnd, windowStart, k) {
 }
 
 longestSubSameLetReplace(str, k);
+

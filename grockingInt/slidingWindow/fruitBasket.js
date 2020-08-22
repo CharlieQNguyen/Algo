@@ -80,3 +80,42 @@ function fruitInBasket(fruits) {
   }
   return maxlen;
 }
+
+// Rotate a array at position k. Where the first position of the array is 0. keep space complexity and time complexity less than O(n^2) where n is the number of elements in the array. 
+
+ 
+
+// exmaple 1:
+
+// array = [2,3,4,5,1,9], k=2
+
+// answer1: 
+
+// [4,5,1,9,2,3]
+
+ 
+
+// exmaple 2:
+
+// array = [2,3,4,5,1,9], k=10
+
+// answer2: 
+
+// []
+
+// rotate the matrix 90 degrees 
+// [1,2,3,4]
+// [5,6,7,8]
+// [1.3.4.5]
+// [3,4,2,3]
+
+// [3,1,5,1]
+// [4,3,6,2]
+// [2.4.7.3]
+// [3,5,8,4]
+
+// what is the longest distance between two words
+// string str="Zen3 zen3 is fun place to work.I love zen3 work"
+// string str = "Zen3 something work"
+// input : any two strings(input1 : Zen3, input2 : work) 
+// ouput : Longest distance between two words(4)
