@@ -40,15 +40,17 @@ function find_smallest_SubStr(str, pattern) {
     let rightChar = str[windowEnd];
     if(rightChar in patternMap) {
       patternMap[rightChar] -= 1;
-      if(pattern[rightChar] >= 0) {
+
+      if(patternMap[rightChar] >= 0) {
         match += 1;
+
       }
     }
     while(match === pattern.length) {
-
       var currentWindowLength = windowEnd - windowStart + 1;
+      //console.log(" this is a test " + currentWindowLength)
 
-      smallestSubStrLength = Math.max(smallestSubStrLength, currentWindowLength);
+      smallestSubStrLength = Math.min(smallestSubStrLength, currentWindowLength);
 
       startOfStr = windowStart;
 
@@ -70,7 +72,7 @@ function find_smallest_SubStr(str, pattern) {
   if(smallestSubStrLength > str.length) {
     return ''
   }
-  return console.log(str.substring(startOfStr, startOfStr + currentWindowLength));
+  return console.log(str.substring(startOfStr, startOfStr + smallestSubStrLength));
 }
 
 find_smallest_SubStr(str, pattern);
