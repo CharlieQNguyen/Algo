@@ -1,26 +1,57 @@
-// arr = [2, 1, 5, 1, 3, 2];
-// k = 3
+arr = [2, 1, 5, 1, 3, 2];
+k = 3
 
-arr = [2, 3, 4, 1, 5];
-k = 2;
+// arr = [2, 3, 4, 1, 5];
+// k = 2;
 
-function maxSumK(arr, k) {
-  let start = 0;
-  let maxSum = 0;
+function maxSumSubSizeK(arr, k) {
+  let windowStart = 0;
   let windowSum = 0;
+  let maxSum = -Infinity;
 
-  for(let end = 0; end < arr.length; end++) {
-    windowSum += arr[end];
-    let windowLength = end - start + 1;
+  for(let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+    windowSum += arr[windowEnd];
+
+    let windowLength = windowEnd - windowStart + 1;
+
     if(windowLength === k) {
       maxSum = Math.max(maxSum, windowSum);
-      windowSum -= arr[start];
-      start++;
+      windowSum -= arr[windowStart];
+      windowStart++;
     }
   }
   return console.log(maxSum)
 }
-maxSumK(arr, k);
+
+maxSumSubSizeK(arr, k);
+
+
+
+
+
+
+
+
+
+
+
+// function maxSumK(arr, k) {
+//   let start = 0;
+//   let maxSum = 0;
+//   let windowSum = 0;
+
+//   for(let end = 0; end < arr.length; end++) {
+//     windowSum += arr[end];
+//     let windowLength = end - start + 1;
+//     if(windowLength === k) {
+//       maxSum = Math.max(maxSum, windowSum);
+//       windowSum -= arr[start];
+//       start++;
+//     }
+//   }
+//   return console.log(maxSum)
+// }
+// maxSumK(arr, k);
 
 // function maxSumSubArray(arr, k) {
 //     let maxSum = 0;
