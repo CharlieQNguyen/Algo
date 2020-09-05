@@ -1,13 +1,57 @@
-arr = [2, 1, 5, 1, 3, 2];
-k = 3
+arr = [2, 3, 4, 1, 5];
+k = 2
 
-// arr = [2, 3, 4, 1, 5];
-// k = 2;
+function maximum_Sum_Subarray_SizeK(arr, k) {
+
+  let windowStart = 0;
+  let maxSum = -Infinity;
+  let windowSum = 0;
+
+  for(let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+    
+    windowSum += arr[windowEnd];
+
+    let windowLength = windowEnd - windowStart + 1;
+
+    if(windowLength === k) {
+      maxSum = Math.max(maxSum, windowSum);
+      windowSum -= arr[windowStart];
+      windowStart++;
+    }
+  }
+  return console.log(maxSum)
+}
+
+maximum_Sum_Subarray_SizeK(arr, k);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+arr = [2, 3, 4, 1, 5];
+k = 2;
 
 function maxSumSubSizeK(arr, k) {
   let windowStart = 0;
   let windowSum = 0;
-  let maxSum = -Infinity;
+  let maxSum = 0;
 
   for(let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
     windowSum += arr[windowEnd];
@@ -25,13 +69,7 @@ function maxSumSubSizeK(arr, k) {
 
 maxSumSubSizeK(arr, k);
 
-
-
-
-
-
-
-
+*/
 
 
 
