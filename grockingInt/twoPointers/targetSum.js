@@ -19,8 +19,8 @@ Explanation: The numbers at index 0 and 2 add up to 11: 2+9=11
 
 */
 
-arr = [2, 5, 9, 11];
-target = 11;
+arr = [1, 2, 3, 4, 6];
+target = 6;
 
 function targetSum(arr, target) {
     let start = 0;
@@ -29,25 +29,58 @@ function targetSum(arr, target) {
     let indexSum = [];
 
     while(start < end) {
-        let mid = Math.floor((start + end)/2);
-        sum = arr[start] + arr[end]
 
-        if(sum === target) {
-            indexSum.push(start, end)
-            console.log("this is the start : " + start)
-            console.log("this is the end : " + end)
+        sum = arr[start] + arr[end];
+
+        if( sum == target ) {
+            indexSum.push(start, end);
+            return console.log(indexSum);
         } 
-        else if(arr[mid] > target) {
-            end = mid - 1;
-            console.log("this is target greater than sum")
-        }
-        else if(arr[mid] < target)
-        {
-            start = mid + 1;
-            console.log("this is target less than sum")
+        else if(sum > target) {
+            end--;
+        } 
+        else {
+            start++;
         }
     }
-    console.log(indexSum)
 }
 
-targetSum(arr, target);
+targetSum(arr, target)
+
+
+
+
+
+
+
+
+
+// function targetSum(arr, target) {
+//     let start = 0;
+//     let end = arr.length - 1;
+//     let sum = 0;
+//     let indexSum = [];
+
+//     while(start < end) {
+//         let mid = Math.floor((start + end)/2);
+//         sum = arr[start] + arr[end]
+
+//         if(sum === target) {
+//             indexSum.push(start, end)
+//             console.log("this is the start : " + start)
+//             console.log("this is the end : " + end)
+//         } 
+//         else if(arr[mid] > target) {
+//             end = mid - 1;
+//             console.log("this is target greater than sum")
+//         }
+//         else if(arr[mid] < target)
+//         {
+//             start = mid + 1;
+//             console.log("this is target less than sum")
+//         }
+//     }
+//     console.log(indexSum)
+// }
+
+// targetSum(arr, target);
