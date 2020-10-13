@@ -41,3 +41,4 @@ var removeNthFromEnd = function(head, n) {
 
 const headNode = Node.createLinkedListFromArray(["a","b","c","d"]);
 console.log(removeNthFromEnd(headNode, 4).toString());
+

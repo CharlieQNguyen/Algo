@@ -19,71 +19,61 @@ Explanation: The numbers at index 0 and 2 add up to 11: 2+9=11
 
 */
 
-arr = [1, 2, 3, 4, 6];
-target = 6;
-
-
-function targetSum(arr, target) {
-    let hash = {};
-
-    for(let i = 0; i < arr.length; i++) {
-        
-        let complement = target - arr[i];
-
-        if(complement in hash) {
-          // 6 - 1 = 5
-          // 6 - 2 = 4
-          // 6 - 3 = 3
-          // 6 - 4 = 2
-          return console.log([hash[complement], i]);
-        } else {
-            hash[arr[i]] = i;
-            /* {
-                1 : 0,
-                2 : 1, 
-                3 : 2, 
-                4 : 3,
-                }
-            */
-        }
-    }
-}
-
-targetSum(arr, target);
-
-
-
-
-
-
-
+// arr = [1, 2, 3, 4, 6];
+// target = 6;
 
 // function targetSum(arr, target) {
-//     let start = 0;
-//     let end = arr.length - 1;
-//     let sum = 0;
-//     let indexSum = [];
+//     let hash = {};
 
-//     while(start < end) {
+//     for(let i = 0; i < arr.length; i++) {
 
-//         sum = arr[start] + arr[end];
+//         let complement = target - arr[i];
 
-//         if( sum == target ) {
-//             indexSum.push(start, end);
-//             return console.log(indexSum);
-//         } 
-//         else if(sum > target) {
-//             end--;
-//         } 
-//         else {
-//             start++;
+//         if(complement in hash) {
+//           // 6 - 1 = 5
+//           // 6 - 2 = 4
+//           // 6 - 3 = 3
+//           // 6 - 4 = 2
+//           return console.log([hash[complement], i]);
+//         } else {
+//             hash[arr[i]] = i;
+//             /* {
+//                 1 : 0,
+//                 2 : 1,
+//                 3 : 2,
+//                 4 : 3,
+//                 }
+//             */
 //         }
 //     }
 // }
 
-// targetSum(arr, target)
+// targetSum(arr, target);
 
+// arr = [1, 2, 3, 4, 6];
+// target = 6;
 
+// function targetSum(arr, target) {
+//   let start = 0;
+//   let end = arr.length - 1;
+//   let sum = 0;
+//   let indexSum = [];
+
+//   while (start < end) {
+//     sum = arr[start] + arr[end];
+
+//     if (sum == target) {
+//       indexSum.push(start, end);
+//       return console.log(indexSum);
+//     } else if (sum > target) {
+//       end--;
+//     } else {
+//       start++;
+//     }
+//   }
+// }
+
+// targetSum(arr, target);
 
 // function targetSum(arr, target) {
 //     let start = 0;
@@ -99,7 +89,7 @@ targetSum(arr, target);
 //             indexSum.push(start, end)
 //             console.log("this is the start : " + start)
 //             console.log("this is the end : " + end)
-//         } 
+//         }
 //         else if(arr[mid] > target) {
 //             end = mid - 1;
 //             console.log("this is target greater than sum")
@@ -114,3 +104,33 @@ targetSum(arr, target);
 // }
 
 // targetSum(arr, target);
+
+// 1. How to find all pairs of elements in an integer array, whose sum is equal to a given number?
+
+arr = [1, 2, 3, 4, 5, 6, 7]
+target = 9
+
+function targetSum(arr, target) {
+  arr.sort((a, b) => a - b);
+
+  let start = 0;
+  let end = arr.length - 1;
+  let answer = []
+
+  while(start < end) {
+    let sum = arr[start] + arr[end];
+
+    if(sum < target) {
+      start++;
+    } else if(sum > target) {
+      end--;
+    } else if(sum === target) {
+      answer += "("+arr[start] +","+ arr[end]+")"
+      start++;
+      end--;
+    }
+  }
+  return console.log(answer)
+}
+
+targetSum(arr, target);
