@@ -9,41 +9,99 @@ int[] B = {2,4,9,16,27,76,98}
 */
 
 
-arr1 = [1,5,7,12,18,32];
-arr2 = [2,4,9,16,27,76,98];
+arr1 = [1, 2, 3, 0, 0, 0];
+m = 3;
+arr2 = [2, 5, 6];
+n = 3;
 
 //answer = 1, 2, 4, 5, 7, 9, 12, 16, 18, 32, 76, 98
 
-function merge(arr1, arr2) {
-    let lengthArr1 = arr1.length;
-    let lengthArr2 = arr2.length;
-    let i = 0;
+function merg(arr1, m, arr2, n) {
+    
     let j = 0;
-    let merge = [];
+    for(let i = m; i < arr1.length; i++) {
+        let temp = arr2[j];
+        arr1[i] = temp;
+        j++;
+    }
 
-    while(i < lengthArr1 && j < lengthArr2) {
-        if(arr1[i] < arr2[j]) {
-            merge.push(arr1[i]);
-            i++;
-        } else {
-            merge.push(arr2[j]);
-            j++;
+    for(let i = 0; i < arr1.length; i++) {
+
+        if(arr1[i] < arr1[i+1]) {
+            let t2 = arr1[i];
+            arr1[i+1] = arr1[i]
         }
     }
 
-    while(i < lengthArr1) {
-        merge.push(arr1[i]);
-        i++;
-    }
-
-    while(j < lengthArr2) {
-        merge.push(arr2[j]);
-        j++;
-    }
-    return console.log(merge)
+    console.log(arr1)
 }
 
-merge(arr1, arr2);
+merg(arr1, m, arr2, n);
+
+
+// function merge(arr1, arr2) {
+//     let lengthArr1 = arr1.length;
+//     let lengthArr2 = arr2.length;
+//     let i = 0;
+//     let j = 0;
+//     let answer = [];
+
+//     while(i < lengthArr1 && j < lengthArr2) {
+//         if(arr1[i] > arr2[j]) {
+//             answer.push(arr2[j]);
+//             j++;
+//         } else {
+//             answer.push(arr1[i]);
+//             i++;
+//         }
+//     }
+//     while(i < lengthArr1) {
+//         answer.push(arr1[i]);
+//         i++;
+//     }
+//     while(j < lengthArr2) {
+//         answer.push(arr2[j])
+//         j++;
+//     }
+//     return console.log(answer)
+// }
+
+// merge(arr1, arr2);
+
+
+
+
+
+// function merge(arr1, arr2) {
+//     let lengthArr1 = arr1.length;
+//     let lengthArr2 = arr2.length;
+//     let i = 0;
+//     let j = 0;
+//     let merge = [];
+
+//     while(i < lengthArr1 && j < lengthArr2) {
+//         if(arr1[i] < arr2[j]) {
+//             merge.push(arr1[i]);
+//             i++;
+//         } else {
+//             merge.push(arr2[j]);
+//             j++;
+//         }
+//     }
+
+//     while(i < lengthArr1) {
+//         merge.push(arr1[i]);
+//         i++;
+//     }
+
+//     while(j < lengthArr2) {
+//         merge.push(arr2[j]);
+//         j++;
+//     }
+//     return console.log(merge)
+// }
+
+// merge(arr1, arr2);
 
 
 

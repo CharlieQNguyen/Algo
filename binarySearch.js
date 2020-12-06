@@ -5,7 +5,7 @@ const target = 3;
 function binarySearch(arr, target){
     let start = 0;
     let end = arr.length-1;
-    while(start < end) {
+    while(start <= end) {
         let mid = Math.floor((start + end)/2);
         if(target === arr[mid]) {
             return mid;

@@ -5,7 +5,7 @@ num = 4;
 function numFinder(arr, num) {
     let left = 0;
     let right = arr.length-1;
-    while(left < right) {
+    while(left <= right) {
         var mid = Math.floor((left + right)/2);
         if(arr[mid] == num) {
             return console.log(arr[mid])

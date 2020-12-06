@@ -1,3 +1,55 @@
+/*
+    Write a small method  to do the below task.. this is not in sorted order.. 
+    all negative characters in left and positive on the right..
+
+    input = { 4, -3, 2, -5, 5, -1, 3}
+
+    output= {-3,-5, -1, 4, 2, 5, 3}
+
+*/
+
+arr = [ 4, -3, 2, -5, 5, -1, 3]
+
+output= [-3,-5, -1, 4, 2, 5, 3]
+
+
+function negToPos(arr) {
+    let neg = 0;
+
+    for(let i = 0; i < arr.length; i++) {
+
+        if(arr[i] < 0) {
+            let temp = arr[i];
+            arr[i] = arr[neg];
+            arr[neg] = temp;
+            neg++;
+        }
+    }
+    console.log(arr)
+}
+
+negToPos(arr);
+
+// function negToPos(arr) {
+//     let neg = 0;
+
+//     for(let i = 0; i < arr.length; i++) {
+//         if(arr[i] < 0) {
+//             let temp = arr[i];
+//             arr[i] = arr[neg];
+//             arr[neg] = temp;
+//             neg++;
+//         }
+//     }
+//     return console.log(arr)
+// }
+
+// negToPos(arr);
+
+
+
+
+
 // import java.util.*;
 // public class Test {
 // 	public static void main(String[] args) {
@@ -17,24 +69,24 @@
 // 	}
 // }
 
-arr = [ 4, -3, 2, -5, 5, -1, 3 ];
+// arr = [ 4, -3, 2, -5, 5, -1, 3 ];
 
-output= [-3,-5, -1, 4, 2, 5, 3]
+// output= [-3,-5, -1, 4, 2, 5, 3]
 
-function negToPos(arr) {
+// function negToPos(arr) {
 
-    let j = 0;
+//     let j = 0;
 
-    for(let i = 0; i < arr.length; i++) {
+//     for(let i = 0; i < arr.length; i++) {
 
-        if(arr[i] <= 0) {
-            let temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-            j++;
-        }
-    }
-    return console.log(arr)
-}
+//         if(arr[i] <= 0) {
+//             let temp = arr[i];
+//             arr[i] = arr[j];
+//             arr[j] = temp;
+//             j++;
+//         }
+//     }
+//     return console.log(arr)
+// }
 
-negToPos(arr);
+// negToPos(arr);

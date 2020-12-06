@@ -11,18 +11,36 @@ Output array =  [0, 0, 0, 0, 0, 1, 1, 1, 1, 1]
 arr = [0, 1, 0, 1, 0, 0, 1, 1, 1, 0]
 
 function segZero(arr) {
+    let zero = 0;
 
-    let z = 0;
     for(let i = 0; i < arr.length; i++) {
-
         if(arr[i] == 0) {
             let temp = arr[i];
-            arr[i] = arr[z];
-            arr[z] = temp;
-            z++;
+            arr[i] = arr[zero];
+            arr[zero] = temp;
+            zero++;
         }
     }
     return console.log(arr)
 }
 
-segZero(arr)
+segZero(arr);
+
+
+
+// function segZero(arr) {
+
+//     let z = 0;
+//     for(let i = 0; i < arr.length; i++) {
+
+//         if(arr[i] == 0) {
+//             let temp = arr[i];
+//             arr[i] = arr[z];
+//             arr[z] = temp;
+//             z++;
+//         }
+//     }
+//     return console.log(arr)
+// }
+
+// segZero(arr)
