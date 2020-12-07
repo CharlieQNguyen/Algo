@@ -18,6 +18,7 @@
 
 str = "code";
 
+
 function palindrome(str) {
     
     let hash = {};
@@ -31,10 +32,10 @@ function palindrome(str) {
             offSet++;
         } else {
             hash[str[i]] -= 1;
-            offset--;
+            offSet--;
         }
     }
-    return offset <= 1;
+    return console.log(offSet <= 1);
 }
 
 palindrome(str);
