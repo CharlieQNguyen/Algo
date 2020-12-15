@@ -23,21 +23,38 @@
         Output: 0
 */
 
-nums = [1, 2, 3];
+nums = [1, 2, 3, 1, 1, 3];
 
 function numGoodPar(nums) {
   let count = 0;
+  let hash = {};
 
   for(let i = 0; i < nums.length; i++) {
-    
-    for(let j = 1 + i; j < nums.length; j++) {
 
-      if(nums[i] == nums[j]) {
-        count++;
-      }
+    let currentNum = num[i]
+
+    if(hash[currentNum]) {
+      hash[currentNum] += 1;
+      count++;
+    } else {
+      hash[currentNum] = 1;
     }
   }
   return console.log(count)
 }
+// function numGoodPar(nums) {
+//   let count = 0;
+
+//   for(let i = 0; i < nums.length; i++) {
+    
+//     for(let j = 1 + i; j < nums.length; j++) {
+
+//       if(nums[i] == nums[j]) {
+//         count++;
+//       }
+//     }
+//   }
+//   return console.log(count)
+// }
 
 numGoodPar(nums);
