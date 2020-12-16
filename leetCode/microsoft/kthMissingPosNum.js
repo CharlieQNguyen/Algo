@@ -16,21 +16,26 @@
     Output: 6
     Explanation: The missing positive integers are [5,6,7,...]. The 2nd missing positive integer is 6.
 */
-arr = [2, 3, 4, 7, 11];
+arr = [1, 2, 3, 4];
 
-k = 5;
-
+k = 2;
+yujhgj = {sadfasdfas 
+safaf }
 function kThMissingPositiveNum(arr, k) {
 
     let counter = 0;
-
-    for(let i = 1; i <= 1000; i++) {
-
-         if(i != arr[counter]) {
-
-            
+    let arr2 = [];
+    for(let i = 0; i <= 1000; i++) {
+        counter++;
+         if(arr[i] != counter) {
+            arr2.push(counter);
          }
     }
-
+    for(let j = 0; j < arr2.length; j++) {
+        if(j == k) {
+            return console.log(k)
+        }
+    }
 }
 
+kThMissingPositiveNum(arr, k);

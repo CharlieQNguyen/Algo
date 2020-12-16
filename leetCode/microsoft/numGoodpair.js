@@ -25,17 +25,28 @@
 
 nums = [1, 2, 3, 1, 1, 3];
 
+// hashX = 
+// {
+//   1 : 1 + 1 = 2,   2 + 1 = 3
+//   2 : 1,
+//   3 : 1
+// }
+
+//count = 0 + 1 = 1
+//count = 1 + 2 = 3
+//count = 3 + 1 = 4
+
 function numGoodPar(nums) {
   let count = 0;
   let hash = {};
 
   for(let i = 0; i < nums.length; i++) {
 
-    let currentNum = num[i]
+    let currentNum = nums[i]
 
     if(hash[currentNum]) {
+      count += hash[currentNum];
       hash[currentNum] += 1;
-      count++;
     } else {
       hash[currentNum] = 1;
     }
