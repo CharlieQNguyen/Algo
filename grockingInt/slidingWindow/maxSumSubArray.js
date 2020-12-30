@@ -1,14 +1,28 @@
-arr = [2, 3, 4, 1, 5];
-k = 2
+/*
+  Given an array of positive numbers and a positive number ‘k,’ 
+  find the maximum sum of any contiguous subarray of size ‘k’.
+
+  Example 1:
+
+  Input: [2, 1, 5, 1, 3, 2], k=3 
+  Output: 9
+  Explanation: Subarray with maximum sum is [5, 1, 3].
+  Example 2:
+
+  Input: [2, 3, 4, 1, 5], k=2 
+  Output: 7
+  Explanation: Subarray with maximum sum is [3, 4].
+*/
+arr = [2, 1, 5, 1, 3, 2];
+k = 3
 
 function maximum_Sum_Subarray_SizeK(arr, k) {
-
   let windowStart = 0;
   let maxSum = -Infinity;
   let windowSum = 0;
 
   for(let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
-    
+
     windowSum += arr[windowEnd];
 
     let windowLength = windowEnd - windowStart + 1;
@@ -23,6 +37,29 @@ function maximum_Sum_Subarray_SizeK(arr, k) {
 }
 
 maximum_Sum_Subarray_SizeK(arr, k);
+
+// function maximum_Sum_Subarray_SizeK(arr, k) {
+
+//   let windowStart = 0;
+//   let maxSum = -Infinity;
+//   let windowSum = 0;
+
+//   for(let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+    
+//     windowSum += arr[windowEnd];
+
+//     let windowLength = windowEnd - windowStart + 1;
+
+//     if(windowLength === k) {
+//       maxSum = Math.max(maxSum, windowSum);
+//       windowSum -= arr[windowStart];
+//       windowStart++;
+//     }
+//   }
+//   return console.log(maxSum)
+// }
+
+// maximum_Sum_Subarray_SizeK(arr, k);
 
 
 
