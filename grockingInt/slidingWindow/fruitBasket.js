@@ -30,8 +30,35 @@
 
 fruits = ["A", "B", "C", "B", "B", "C"];
 
+function fruitBasket(fruits) {
+  let windowStart = 0;
+  let typesOfFruites = {};
+  let maxFruit = 0;
 
+  for (let windowEnd = 0; windowEnd < fruits.length; windowEnd++) {
+    const rightFruit = fruits[windowEnd];
+    if (typesOfFruites[rightFruit]) {
+      typesOfFruites[rightFruit] += 1;
+    } else {
+      typesOfFruites[rightFruit] = 1;
+    }
+    while (Object.keys(typesOfFruites).length > 2) {
+      const leftFruit = fruits[windowStart];
 
+      typesOfFruites[leftFruit] -= 1;
+
+      if (typesOfFruites[leftFruit] === 0) {
+        delete typesOfFruites[leftFruit];
+      }
+      windowStart++;
+    }
+    let windowLength = windowEnd - windowStart + 1;
+    maxFruit = Math.max(maxFruit, windowLength);
+  }
+  return console.log(maxFruit);
+}
+
+fruitBasket(fruits);
 
 // function fruitBasket(fruits) {
 //     let basket = 2;
@@ -84,29 +111,25 @@ fruits = ["A", "B", "C", "B", "B", "C"];
 //   return maxlen;
 // }
 
-// Rotate a array at position k. Where the first position of the array is 0. keep space complexity and time complexity less than O(n^2) where n is the number of elements in the array. 
-
- 
+// Rotate a array at position k. Where the first position of the array is 0. keep space complexity and time complexity less than O(n^2) where n is the number of elements in the array.
 
 // exmaple 1:
 
 // array = [2,3,4,5,1,9], k=2
 
-// answer1: 
+// answer1:
 
 // [4,5,1,9,2,3]
-
- 
 
 // exmaple 2:
 
 // array = [2,3,4,5,1,9], k=10
 
-// answer2: 
+// answer2:
 
 // []
 
-// rotate the matrix 90 degrees 
+// rotate the matrix 90 degrees
 // [1,2,3,4]
 // [5,6,7,8]
 // [1.3.4.5]
@@ -120,5 +143,5 @@ fruits = ["A", "B", "C", "B", "B", "C"];
 // what is the longest distance between two words
 // string str="Zen3 zen3 is fun place to work.I love zen3 work"
 // string str = "Zen3 something work"
-// input : any two strings(input1 : Zen3, input2 : work) 
+// input : any two strings(input1 : Zen3, input2 : work)
 // ouput : Longest distance between two words(4)
