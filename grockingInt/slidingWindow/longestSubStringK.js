@@ -1,7 +1,39 @@
 // Given a string, find the length of the longest substring in it with no more than K distinct characters.
 
-// str = "araaci";
-// k = 2
+
+str = "araaci";
+k = 2;
+
+function longestSubStringK(str, k) {
+  let hash = {};
+  let windowStart = 0;
+  let maxLength = 0;
+
+  for (let windowEnd = 0; windowEnd < str.length; windowEnd++) {
+
+    const rightChar = str[windowEnd];
+
+    if(hash[rightChar]) {
+        hash[rightChar] += 1;
+    } else {
+        hash[rightChar] = 1;
+    }
+    while(Object.keys(hash).length > k) {
+
+        const leftChar = str[windowStart];
+
+        hash[leftChar] -= 1;
+
+        if(hash[leftChar] === 0) {
+            delete hash[leftChar]
+        }
+        windowStart++;
+    }
+    let windowLength = windowEnd - windowStart + 1;
+    maxLength = Math.max(maxLength, windowLength)
+  }
+  return console.log(maxLength)
+}
 
 // function longestSubStringK(str, k) {
 //     let windowStart = 0;
@@ -53,41 +85,40 @@ Output: 5
 Explanation: The longest substrings with no more than '3' distinct characters are "cbbeb" & "bbebi".
 */
 
-str = "araaci";
-k = 2;
 
-function longestSubStringK(str, k) {
-    let hashChar = {};
-    let windowStart = 0;
-    let maxLength = 0;
-    let strStart = 0;
-    for(let windowEnd = 0; windowEnd < str.length; windowEnd++) {
 
-        if(hashChar[str[windowEnd]]) {
-            hashChar[str[windowEnd]] += 1;
-        } else {
-            hashChar[str[windowEnd]] = 1;
-        }
+// function longestSubStringK(str, k) {
+//     let hashChar = {};
+//     let windowStart = 0;
+//     let maxLength = 0;
+//     let strStart = 0;
+//     for(let windowEnd = 0; windowEnd < str.length; windowEnd++) {
 
-        while(Object.keys(hashChar).length > k) {
-            hashChar[str[windowStart]] -= 1;
-            if(hashChar[str[windowStart]] === 0){
-                delete hashChar[str[windowStart]]
-            }
-            windowStart++
-        }
+//         if(hashChar[str[windowEnd]]) {
+//             hashChar[str[windowEnd]] += 1;
+//         } else {
+//             hashChar[str[windowEnd]] = 1;
+//         }
 
-        windowLength = windowEnd - windowStart + 1;
-        if(windowLength > maxLength) {
-            strStart = windowStart;
-            maxLength = windowLength; // maxlength is length winning window
-        }
-        //maxLength = Math.max(maxLength, windowLength)
-    }
-    return console.log(str.substring(strStart, strStart + maxLength))
+//         while(Object.keys(hashChar).length > k) {
+//             hashChar[str[windowStart]] -= 1;
+//             if(hashChar[str[windowStart]] === 0){
+//                 delete hashChar[str[windowStart]]
+//             }
+//             windowStart++
+//         }
 
-    //[1 ,2, 3, 4, 5]
-}
+//         windowLength = windowEnd - windowStart + 1;
+//         if(windowLength > maxLength) {
+//             strStart = windowStart;
+//             maxLength = windowLength; // maxlength is length winning window
+//         }
+//         //maxLength = Math.max(maxLength, windowLength)
+//     }
+//     return console.log(str.substring(strStart, strStart + maxLength))
+
+//     //[1 ,2, 3, 4, 5]
+// }
 
 longestSubStringK(str, k);
 

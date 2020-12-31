@@ -30,6 +30,9 @@
 
 fruits = ["A", "B", "C", "B", "B", "C"];
 
+
+
+
 // function fruitBasket(fruits) {
 //     let basket = 2;
 //     let typesOfFruits = {};
@@ -59,27 +62,27 @@ fruits = ["A", "B", "C", "B", "B", "C"];
 
 // fruitBasket(fruits);
 
-function fruitInBasket(fruits) {
-  let fruitmap = {};
-  let maxlen = 0;
-  let start = 0;
-  for (let fruit of fruits) {
-    let currentlen = 0;
-    fruitmap[fruit] = fruitmap[fruit] + 1 || 1;
-    while (Object.keys(fruitmap).length > 2) {
-      fruitmap[fruits[start]] -= 1;
-      if (fruitmap[fruits[start]] == 0) {
-        delete fruitmap[fruits[start]];
-      }
-      start++;
-    }
-    for (let key in fruitmap) {
-      currentlen += fruitmap[key];
-    }
-    maxlen = Math.max(currentlen, maxlen);
-  }
-  return maxlen;
-}
+// function fruitInBasket(fruits) {
+//   let fruitmap = {};
+//   let maxlen = 0;
+//   let start = 0;
+//   for (let fruit of fruits) {
+//     let currentlen = 0;
+//     fruitmap[fruit] = fruitmap[fruit] + 1 || 1;
+//     while (Object.keys(fruitmap).length > 2) {
+//       fruitmap[fruits[start]] -= 1;
+//       if (fruitmap[fruits[start]] == 0) {
+//         delete fruitmap[fruits[start]];
+//       }
+//       start++;
+//     }
+//     for (let key in fruitmap) {
+//       currentlen += fruitmap[key];
+//     }
+//     maxlen = Math.max(currentlen, maxlen);
+//   }
+//   return maxlen;
+// }
 
 // Rotate a array at position k. Where the first position of the array is 0. keep space complexity and time complexity less than O(n^2) where n is the number of elements in the array. 
 
