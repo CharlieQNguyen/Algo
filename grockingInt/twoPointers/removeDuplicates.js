@@ -54,13 +54,41 @@ Explanation: The first two elements after removing the duplicates will be [2, 11
 //   return console.log(noneDup);
 // }
 
-arr = [2, 3, 3, 3, 6, 9, 9]
+arr = [2, 3, 3, 3, 6, 9, 9];
+/*    
+      [2, 3, 3, 3, 6, 9, 9]
+       s  r
+          s
+      [2, 3, 3, 3, 6, 9, 9]
+          s  r
+      [2, 3, 3, 3, 6, 9, 9]
+          s     r     
+      [2, 3, 3, 3, 6, 9, 9]   
+          s        r 
+      [2, 3, 6, 3, 6, 9, 9] 
+             s     r 
+      [2, 3, 6, 3, 6, 9, 9]
+             s        r
+      [2, 3, 6, 9, 6, 9, 9]
+                s     r
+      [2, 3, 6, 9, 6, 9, 9]
+                s        r  
+*/
+
 Output: 4;
 
 function removeDup(arr) {
-  let noneDup = 0;
+  let nonDup = 1;
+  let start = 0;
+  for(let runner = 1; runner < arr.length; runner++) {
 
-  let 
+    if(arr[runner] !== arr[start]) {
+      start += 1;
+      arr[start] = arr[runner];
+      nonDup++;
+    }
+  }
+  return console.log(nonDup)
 }
 
 removeDup(arr);
