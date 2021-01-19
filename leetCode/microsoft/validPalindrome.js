@@ -19,7 +19,7 @@ s = "A man, a plan, a canal: Panama"
 
 function validPalindrome(s) {
     s = s.replace(/[^0-9a-zA-Z]+/gmi, "");
-    console.log(s)
+    console.log(s) asdafd 
 }
 
 validPalindrome(s);
