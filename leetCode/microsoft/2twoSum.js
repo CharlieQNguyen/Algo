@@ -27,24 +27,36 @@ numbers = [2, 7, 11, 15];
 target = 9;
 
 function twoSum(numbers, target) {
-
-    let start = 0;
-    let end = numbers.length - 1;
-
-    while(start < end) {
-
-        let sum = numbers[start] + numbers[end];
-
-        if(sum === target) {
-
-            return console.log([start + 1, end + 1]);
-
-        } else if(sum > target) {
-            end--;
-        } else {
-            start++;
+    let hash = {};
+    for(let i = 0; i < numbers.length; i++) {
+        hash[numbers[i]] = i;
+        let complement = target - numbers[i];
+        if(hash.contains(complement)) {
+            console.log()
         }
     }
-    console.log(result)
+    console.log(hash)
 }
+
+// function twoSum(numbers, target) {
+
+//     let start = 0;
+//     let end = numbers.length - 1;
+
+//     while(start < end) {
+
+//         let sum = numbers[start] + numbers[end];
+
+//         if(sum === target) {
+
+//             return console.log([start + 1, end + 1]);
+
+//         } else if(sum > target) {
+//             end--;
+//         } else {
+//             start++;
+//         }
+//     }
+//     console.log(result)
+// }
 twoSum(numbers, target);
