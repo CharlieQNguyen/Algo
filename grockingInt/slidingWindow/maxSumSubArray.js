@@ -22,21 +22,40 @@ function maximum_Sum_Subarray_SizeK(arr, k) {
   let windowSum = 0;
 
   for(let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
-
     windowSum += arr[windowEnd];
-
     let windowLength = windowEnd - windowStart + 1;
-
-    if(windowLength === k) {
+    if(windowLength == k) {
       maxSum = Math.max(maxSum, windowSum);
       windowSum -= arr[windowStart];
       windowStart++;
     }
   }
-  return console.log(maxSum)
+  console.log(maxSum) 
 }
 
 maximum_Sum_Subarray_SizeK(arr, k);
+
+// function maximum_Sum_Subarray_SizeK(arr, k) {
+//   let windowStart = 0;
+//   let maxSum = -Infinity;
+//   let windowSum = 0;
+
+//   for(let windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+
+//     windowSum += arr[windowEnd];
+
+//     let windowLength = windowEnd - windowStart + 1;
+
+//     if(windowLength === k) {
+//       maxSum = Math.max(maxSum, windowSum);
+//       windowSum -= arr[windowStart];
+//       windowStart++;
+//     }
+//   }
+//   return console.log(maxSum)
+// }
+
+// maximum_Sum_Subarray_SizeK(arr, k);
 
 // function maximum_Sum_Subarray_SizeK(arr, k) {
 
